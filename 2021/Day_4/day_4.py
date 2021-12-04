@@ -1,7 +1,7 @@
 
 from copy import deepcopy
 
-class Bingo_Caller:
+class BingoCaller:
     def __init__(self):
         self.input = open('input.txt').read().splitlines()
         self.called = self.input.pop(0).split(',')
@@ -60,7 +60,7 @@ class Bingo_Caller:
         
         return unmarked_sum*num
 
-b = Bingo_Caller()
+b = BingoCaller()
 print(f'Part one: {b.call_nums()}')
 print(f'Part two: {b.call_nums(part_one=False)}')
 
