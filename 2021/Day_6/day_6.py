@@ -4,10 +4,8 @@ def simulator(days):
     fishes = f.copy()
     b =  {}
     total = 0 
-    for idx, fish in enumerate(fishes):
-        if fish not in b: 
-            b[fish] = calculate(fish,days)
-        total += b[fish]
+    for fish in fishes:
+        total += calculate(fish,days)
     return total + len(fishes)
 
 def cache(func):
@@ -33,4 +31,3 @@ def calculate(fish, total_days):
 
 print(f'part one: {simulator(80)}')
 print(f'part two: {simulator(256)}')
-            
