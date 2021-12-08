@@ -1,3 +1,6 @@
+from time import time
+t = time()
+
 f = list(map(int,open('input.txt').read().split(',')))
 
 def simulator(days):
@@ -5,7 +8,9 @@ def simulator(days):
     b =  {}
     total = 0 
     for fish in fishes:
-        total += calculate(fish,days)
+        if fish not in b: 
+            b[fish] = calculate(fish,days)
+        total += b[fish]
     return total + len(fishes)
 
 def cache(func):
@@ -31,3 +36,4 @@ def calculate(fish, total_days):
 
 print(f'part one: {simulator(80)}')
 print(f'part two: {simulator(256)}')
+print(f'time: {(time()-t):.2}s')
